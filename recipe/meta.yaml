@@ -1,5 +1,5 @@
 {% set name = "pystack" %}
-{% set version = "1.0.1" %}
+{% set version = "1.1.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,14 +7,14 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pystack-{{ version }}.tar.gz
-  sha256: 6b7362d4a2688270511a1f0868fddcc02f0db20950ecdb2c990bff777e5737a5
+  sha256: 7657e41101dfbe881c19ea336bcd0981a980338448d937460dba01b15aace4ae
 
 build:
   skip: true  # [not linux]
   entry_points:
     - pystack=pystack.__main__:main
   script: {{ PYTHON }} -m pip install . -vv
-  number: 2
+  number: 0
 
 requirements:
   build:
