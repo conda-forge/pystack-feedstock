@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pystack-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pystack-{{ version }}.tar.gz
   sha256: d0be5de225ed55bffa23e3f69bc2d562a13284fbc4c4e941b9313334c57c90cb
 
 build:
@@ -14,7 +14,7 @@ build:
   entry_points:
     - pystack=pystack.__main__:main
   script: {{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 2
 
 requirements:
   build:
