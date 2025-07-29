@@ -1,0 +1,61 @@
+schema_version: 1
+
+context:
+  name: pystack
+  version: 1.4.1
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/pystack-${{ version }}.tar.gz
+  sha256: d0be5de225ed55bffa23e3f69bc2d562a13284fbc4c4e941b9313334c57c90cb
+
+build:
+  number: 3
+  skip: not linux
+  script: ${{ PYTHON }} -m pip install . -vv
+  python:
+    entry_points:
+      - pystack=pystack.__main__:main
+
+requirements:
+  build:
+    - ${{ compiler('c') }}
+    - ${{ stdlib("c") }}
+    - ${{ compiler('cxx') }}
+  host:
+    - elfutils
+    - python
+    - setuptools
+    - wheel
+    - cython
+    - pkgconfig
+    - pip
+  run:
+    - python
+
+tests:
+  - python:
+      pip_check: true
+      imports:
+        - pystack
+  - script:
+      - pystack --help
+
+about:
+  summary: Analysis of the stack of remote python processes
+  description: |
+    PyStack is a tool that uses forbidden magic to let you
+    inspect the stack frames of a running Python process or
+    a Python core dump.
+  license: Apache-2.0
+  license_file: LICENSE
+  homepage: https://github.com/bloomberg/pystack
+  repository: https://github.com/bloomberg/pystack
+  documentation: https://bloomberg.github.io/pystack/
+
+extra:
+  recipe-maintainers:
+    - beenje
