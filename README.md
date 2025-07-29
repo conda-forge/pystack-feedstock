@@ -17,7 +17,6 @@ PyStack is a tool that uses forbidden magic to let you
 inspect the stack frames of a running Python process or
 a Python core dump.
 
-
 Current build status
 ====================
 
