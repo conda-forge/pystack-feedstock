@@ -38,13 +38,10 @@ requirements:
 
 tests:
   - python:
+      pip_check: true
       imports:
         - pystack
-  - requirements:
-      run:
-        - pip
-    script:
-      - pip check
+  - script:
       - pystack --help
 
 about:
