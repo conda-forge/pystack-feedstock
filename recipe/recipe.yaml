@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: pystack
-  version: 1.4.1
+  version: "1.5.1"
 
 package:
   name: ${{ name|lower }}
@@ -10,10 +10,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/pystack-${{ version }}.tar.gz
-  sha256: d0be5de225ed55bffa23e3f69bc2d562a13284fbc4c4e941b9313334c57c90cb
+  sha256: 9aa1a25ea2f1c3d2176059a280ef2f7c4e26c5540d37ed3c90ded65e6cc06f50
 
 build:
-  number: 3
+  number: 0
   skip: not linux
   script: ${{ PYTHON }} -m pip install . -vv
   python:
