@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: pystack
-  version: "1.6.0"
+  version: "1.7.0"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/pystack-${{ version }}.tar.gz
-  sha256: bcf9d9a46129e36856852526e753aad2f3d19e827bd8feb875cf0c8d0e2ad6b2
+  sha256: aaa62c1a405da5337e1011b1eebd96e7f1c5f6e3f8f60754290d20601b84096c
 
 build:
   number: 0
