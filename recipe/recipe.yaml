@@ -25,13 +25,16 @@ requirements:
     - ${{ compiler('c') }}
     - ${{ stdlib("c") }}
     - ${{ compiler('cxx') }}
+    - cmake
+    - make
+    - pkg-config
   host:
     - elfutils
+    - zlib
+    - liblzma-devel
     - python
-    - setuptools
-    - wheel
-    - cython
-    - pkgconfig
+    - scikit-build-core >=0.4
+    - nanobind >=1.8
     - pip
   run:
     - python
