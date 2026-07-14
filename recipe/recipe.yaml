@@ -21,6 +21,12 @@ build:
       - pystack=pystack.__main__:main
 
 requirements:
+  ignore_run_exports:
+    by_name:
+      # Both packages are required for cmake to find elfutils libraries
+      # but are reported are overdepending
+      - libzlib
+      - liblzma
   build:
     - ${{ compiler('c') }}
     - ${{ stdlib("c") }}
