@@ -39,7 +39,7 @@ requirements:
     - zlib
     - liblzma-devel
     - python
-    - scikit-build-core >=0.4
+    - scikit-build-core >=0.9
     - nanobind >=1.8
     - pip
   run:
