@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: pystack
-  version: "1.7.0"
+  version: "1.7.1"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,9 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/pystack-${{ version }}.tar.gz
-  sha256: aaa62c1a405da5337e1011b1eebd96e7f1c5f6e3f8f60754290d20601b84096c
+  sha256: 1469ffcabcad89ef7e591ee6f4e11610e9e36caa5efb4fb0db599b92e5dbb072
+  patches:
+    - disable-lto.patch
 
 build:
   number: 0
@@ -39,7 +41,7 @@ requirements:
     - zlib
     - liblzma-devel
     - python
-    - scikit-build-core >=0.4
+    - scikit-build-core >=0.9
     - nanobind >=1.8
     - pip
   run:
