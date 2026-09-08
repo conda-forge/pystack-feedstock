@@ -15,7 +15,7 @@ source:
     - disable-lto.patch
 
 build:
-  number: 0
+  number: 1
   skip: not linux
   script: ${{ PYTHON }} -m pip install . -vv
   python:
