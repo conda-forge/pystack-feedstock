@@ -11,8 +11,6 @@ package:
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/pystack-${{ version }}.tar.gz
   sha256: 4e0dfc922ed04302f2efa3e4c42c394bc275506a19449c92edd2c92168544e0b
-  patches:
-    - disable-lto.patch
 
 build:
   number: 0
