@@ -13,7 +13,7 @@ source:
   sha256: 4e0dfc922ed04302f2efa3e4c42c394bc275506a19449c92edd2c92168544e0b
 
 build:
-  number: 1
+  number: 2
   skip: not linux
   script: ${{ PYTHON }} -m pip install . -vv
   python:
@@ -33,7 +33,7 @@ requirements:
     - ${{ compiler('cxx') }}
     - cmake
     - make
-    - pkg-config
+    - pkgconf
   host:
     - elfutils
     - zlib
